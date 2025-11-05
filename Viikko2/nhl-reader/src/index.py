@@ -14,13 +14,11 @@ def main():
         player = Player(player_dict)
         players.append(player)
 
-    nationality = input("Input nationality: ")
+    fins = [p for p in players if p.nationality == "FIN"]
+    fins.sort(key = lambda p: p.score, reverse=True)
 
-    print(f"Players with nationality \"{nationality}\":")
-
-    for player in players:
-        if player.nationality == nationality:
-            print(player)
+    for f in fins:
+        print(f)
 
 
 if __name__ == "__main__":
