@@ -5,7 +5,7 @@ class PlayerReader:
 
     def __init__(self, url: str):
         self.url = url
-        self.json = requests.get(url).json()
+        self.json = requests.get(url, timeout=10).json()
 
     def get_players(self):
         players = []
